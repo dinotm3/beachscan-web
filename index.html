@@ -268,6 +268,123 @@
       line-height: 1.6;
     }
 
+    /* ── SHOWCASE ── */
+    .showcase {
+      padding: 4rem 2rem 6rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .showcase h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .showcase-item {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      margin-bottom: 5rem;
+    }
+
+    .showcase-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .showcase-phone {
+      flex-shrink: 0;
+      width: 260px;
+      height: 520px;
+      border-radius: 32px;
+      border: 3px solid rgba(255,255,255,0.08);
+      background: var(--navy-light);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .showcase-phone img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .showcase-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 1rem;
+      background: linear-gradient(160deg, var(--navy-light) 0%, rgba(0,119,182,0.08) 100%);
+    }
+
+    .showcase-text {
+      flex: 1;
+    }
+
+    .showcase-text .section-label {
+      margin-bottom: 0.5rem;
+    }
+
+    .showcase-text h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .showcase-text p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .showcase-text ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .showcase-text ul li {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      padding: 0.35rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .showcase-text ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    @media (max-width: 640px) {
+      .showcase-item,
+      .showcase-item:nth-child(even) {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+      }
+      .showcase-phone {
+        width: 220px;
+        height: 440px;
+      }
+      .showcase-text ul li { text-align: left; }
+    }
+
     /* ── REGIONS ── */
     .regions {
       padding: 6rem 2rem;
@@ -370,6 +487,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
+      <li><a href="#showcase">How it works</a></li>
       <li><a href="#regions">Regions</a></li>
       <li><a href="/privacy-policy">Privacy</a></li>
     </ul>
@@ -438,6 +556,83 @@
         <div class="feature-icon">&#128506;</div>
         <h3>Interactive Map</h3>
         <p>Explore beaches with satellite imagery, color-coded overlays for conditions, and detailed beach cards with photos and amenities.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase" id="showcase">
+    <div class="section-label" style="text-align:center">How it works</div>
+    <h2>See it in action</h2>
+
+    <!-- 1. Map overview -->
+    <div class="showcase-item">
+      <div class="showcase-phone">
+        <!-- Replace with: /assets/screenshots/map.png -->
+        <div class="showcase-placeholder">Screenshot:<br>Map view with<br>beach markers</div>
+      </div>
+      <div class="showcase-text">
+        <div class="section-label">Explore</div>
+        <h3>20,000+ beaches on one map</h3>
+        <p>Browse beaches across the Mediterranean and Florida with color-coded overlays showing real-time conditions at a glance.</p>
+        <ul>
+          <li>Satellite and light map modes</li>
+          <li>Temperature, wind, and water quality overlays</li>
+          <li>Search by beach name or city</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2. Beach card -->
+    <div class="showcase-item">
+      <div class="showcase-phone">
+        <!-- Replace with: /assets/screenshots/beach-card.png -->
+        <div class="showcase-placeholder">Screenshot:<br>Beach card with<br>weather & recommendations</div>
+      </div>
+      <div class="showcase-text">
+        <div class="section-label">Discover</div>
+        <h3>Everything about a beach in one card</h3>
+        <p>Tap any beach to see photos, live weather, water quality, amenities, and smart recommendations — all updated in real time.</p>
+        <ul>
+          <li>Beach photos and satellite fallback</li>
+          <li>Wind, UV, sea temperature, and air quality</li>
+          <li>Nearby amenities (showers, parking, restaurants)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. Recommendations -->
+    <div class="showcase-item">
+      <div class="showcase-phone">
+        <!-- Replace with: /assets/screenshots/recommendations.png -->
+        <div class="showcase-placeholder">Screenshot:<br>Recommendations &<br>wind shelter</div>
+      </div>
+      <div class="showcase-text">
+        <div class="section-label">Plan</div>
+        <h3>Smart recommendations for your day</h3>
+        <p>Our algorithm analyzes current conditions and tells you what to expect — from perfect swimming weather to wind warnings.</p>
+        <ul>
+          <li>Personalized tips based on real-time data</li>
+          <li>Wind shelter scoring for each beach</li>
+          <li>5-day forecast to find the best day</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4. Browse & save -->
+    <div class="showcase-item">
+      <div class="showcase-phone">
+        <!-- Replace with: /assets/screenshots/browse.png -->
+        <div class="showcase-placeholder">Screenshot:<br>Browse list with<br>filters & ratings</div>
+      </div>
+      <div class="showcase-text">
+        <div class="section-label">Organize</div>
+        <h3>Browse, filter, and save your favorites</h3>
+        <p>Find the perfect beach with filters for surface type, amenities, and water quality. Save your favorites for quick access.</p>
+        <ul>
+          <li>Filter by sand, pebble, or rock</li>
+          <li>Sort by distance or beach rating</li>
+          <li>Rate beaches and help the community</li>
+        </ul>
       </div>
     </div>
   </section>
