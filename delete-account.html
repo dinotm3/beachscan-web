@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account — BeachScan</title>
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #1B2838;
+      --navy-light: #243447;
+      --gold: #D4A03C;
+      --text: #E8ECF1;
+      --text-muted: #8A9BB0;
+      --red: #E74C3C;
+      --red-dark: #C0392B;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      background: rgba(27, 40, 56, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-brand img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    .nav-brand span {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    main {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 7rem 2rem 4rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .warning-box {
+      background: rgba(231, 76, 60, 0.1);
+      border: 1px solid rgba(231, 76, 60, 0.2);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .warning-box p {
+      color: #E8A09A;
+      margin-bottom: 0;
+      font-size: 0.9rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input[type="email"]:focus {
+      border-color: var(--gold);
+    }
+
+    input[type="email"]::placeholder {
+      color: #5A6A7A;
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      margin-top: 0.25rem;
+      accent-color: var(--red);
+    }
+
+    .checkbox-row span {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .btn-delete {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.85rem;
+      background: var(--red);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-delete:hover {
+      background: var(--red-dark);
+    }
+
+    .btn-delete:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .result {
+      text-align: center;
+      padding: 2rem 0;
+      display: none;
+    }
+
+    .result.show { display: block; }
+    .result.success p { color: #2ECC71; }
+    .result.error p { color: var(--red); }
+
+    .result h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      max-width: 520px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-left { color: var(--text-muted); font-size: 0.85rem; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; }
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      main { padding: 5rem 1.25rem 3rem; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-brand">
+      <img src="/assets/icon.png" alt="BeachScan">
+      <span>BeachScan</span>
+    </a>
+  </nav>
+
+  <main>
+    <h1>Delete Your Account</h1>
+    <p>Enter the email address associated with your BeachScan account. We will permanently delete your account and all associated data.</p>
+
+    <div class="warning-box">
+      <p><strong>This action is permanent.</strong> The following data will be deleted and cannot be recovered: your profile, saved beaches, ratings, and all preferences.</p>
+    </div>
+
+    <form id="deleteForm">
+      <div class="form-group">
+        <label for="email">Account email address</label>
+        <input type="email" id="email" placeholder="your@email.com" required>
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="confirm" required>
+        <span>I understand that this action is permanent and all my data will be deleted.</span>
+      </div>
+
+      <button type="submit" class="btn-delete" id="submitBtn">Delete My Account</button>
+    </form>
+
+    <div class="result" id="successResult">
+      <h2>Deletion Request Received</h2>
+      <p>We've received your request. Your account and all associated data will be deleted within 48 hours. You'll receive a confirmation email.</p>
+    </div>
+
+    <div class="result" id="errorResult">
+      <h2>Something went wrong</h2>
+      <p id="errorMessage">Please try again or contact us at contact@beachscanapp.com</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-left">&copy; 2026 BeachScan. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="mailto:contact@beachscanapp.com">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('deleteForm');
+    const btn = document.getElementById('submitBtn');
+    const successResult = document.getElementById('successResult');
+    const errorResult = document.getElementById('errorResult');
+    const errorMessage = document.getElementById('errorMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const confirmed = document.getElementById('confirm').checked;
+
+      if (!email || !confirmed) return;
+
+      btn.disabled = true;
+      btn.textContent = 'Processing...';
+
+      try {
+        const res = await fetch('https://api.beachscanapp.com/api/auth/delete-account', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          document.querySelector('.warning-box').style.display = 'none';
+          successResult.classList.add('show');
+        } else {
+          const data = await res.json().catch(() => ({}));
+          errorMessage.textContent = data.error || 'Please try again or contact us at contact@beachscanapp.com';
+          errorResult.classList.add('show');
+          btn.disabled = false;
+          btn.textContent = 'Delete My Account';
+        }
+      } catch {
+        errorMessage.textContent = 'Network error. Please try again or contact us at contact@beachscanapp.com';
+        errorResult.classList.add('show');
+        btn.disabled = false;
+        btn.textContent = 'Delete My Account';
+      }
+    });
+  </script>
+</body>
+</html>
