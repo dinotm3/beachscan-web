@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — BeachScan | Beach Weather & Water Quality App</title>
+  <meta name="description" content="Frequently asked questions about BeachScan — how beach conditions work, water quality ratings, wind shelter scoring, and more.">
+  <meta name="theme-color" content="#1B2838">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="canonical" href="https://beachscanapp.com/faq">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #1B2838;
+      --navy-light: #243447;
+      --gold: #D4A03C;
+      --text: #E8ECF1;
+      --text-muted: #8A9BB0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      background: rgba(27, 40, 56, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-brand img { width: 36px; height: 36px; border-radius: 8px; }
+    .nav-brand span { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 7rem 2rem 4rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 3rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 1.5rem;
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-item h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+      cursor: pointer;
+    }
+
+    .faq-item p, .faq-item li {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-item ul { padding-left: 1.5rem; }
+    a { color: var(--gold); }
+
+    footer {
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-left { color: var(--text-muted); font-size: 0.85rem; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; }
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      main { padding: 5rem 1.25rem 3rem; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does BeachScan measure beach conditions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BeachScan uses the ECMWF weather model (9km resolution) for real-time weather data, official EU bathing water quality classifications, and data from 9 different weather providers. All data is cross-validated using Met.no (Norwegian Meteorological Institute) to ensure accuracy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the water quality data official?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Water quality ratings come from official EU Bathing Water Directive classifications published by the European Environment Agency (EEA) and national monitoring agencies like IZOR in Croatia. Beaches are rated Excellent, Good, Sufficient, or Poor based on bacterial testing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the wind shelter score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each beach gets a wind exposure score from 0 (fully sheltered) to 1 (fully exposed). This helps you find calm beaches on windy days. The score is calculated based on the beach's orientation relative to the current wind direction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which countries does BeachScan cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BeachScan currently covers over 20,000 beaches across Croatia (2,959), Spain (4,363), Italy (5,482), Greece (5,827), and Florida (1,928). More regions are coming soon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is BeachScan free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BeachScan is free to download and use. All real-time beach conditions, weather data, water quality ratings, and the interactive map are available for free. Premium features like the 5-day forecast and saved beaches are available through optional in-app purchases."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often is the weather data updated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Weather data is updated every 5 minutes from multiple verified sources. Water quality data is updated hourly, and wave data is refreshed every 3 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use BeachScan without creating an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All beach conditions, weather data, water quality, and the map are available without signing in. You only need an account (via Google or Apple Sign-In) to save beaches, rate them, and access premium features."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I find the best beach near me?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open BeachScan and allow location access. The app automatically shows nearby beaches sorted by distance. Use the Browse feature to filter by surface type (sand, pebble, rock), amenities (showers, parking, restaurants), and water quality. Each beach shows a real-time conditions score so you can pick the best one."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the beach forecast show?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 5-day beach forecast shows predicted conditions for each day including temperature, wind speed, UV index, and precipitation. Each day gets a beach conditions score so you can plan your visit for the best day."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I delete my account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Visit beachscanapp.com/delete-account, enter your account email, confirm the deletion, and all your data (profile, saved beaches, ratings) will be permanently deleted within 48 hours."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-brand">
+      <img src="/assets/icon.png" alt="BeachScan beach conditions app">
+      <span>BeachScan</span>
+    </a>
+  </nav>
+
+  <main>
+    <h1>Frequently Asked Questions</h1>
+    <p class="subtitle">Everything you need to know about BeachScan</p>
+
+    <div class="faq-item">
+      <h2>How does BeachScan measure beach conditions?</h2>
+      <p>BeachScan uses the ECMWF weather model (9km resolution) for real-time weather data, official EU bathing water quality classifications, and data from 9 different weather providers. All data is cross-validated using Met.no (Norwegian Meteorological Institute) to ensure accuracy.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Is the water quality data official?</h2>
+      <p>Yes. Water quality ratings come from official EU Bathing Water Directive classifications published by the European Environment Agency (EEA) and national monitoring agencies like IZOR in Croatia. Beaches are rated Excellent, Good, Sufficient, or Poor based on bacterial testing.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>What is the wind shelter score?</h2>
+      <p>Each beach gets a wind exposure score from 0 (fully sheltered) to 1 (fully exposed). This helps you find calm beaches on windy days. The score is calculated based on the beach's orientation relative to the current wind direction.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Which countries does BeachScan cover?</h2>
+      <p>BeachScan currently covers over 20,000 beaches across:</p>
+      <ul>
+        <li>Croatia — 2,959 beaches</li>
+        <li>Spain — 4,363 beaches</li>
+        <li>Italy — 5,482 beaches</li>
+        <li>Greece — 5,827 beaches</li>
+        <li>Florida — 1,928 beaches</li>
+      </ul>
+      <p>More regions are coming soon.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Is BeachScan free?</h2>
+      <p>BeachScan is free to download and use. All real-time beach conditions, weather data, water quality ratings, and the interactive map are available for free. Premium features like the 5-day forecast and saved beaches are available through optional in-app purchases.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>How often is the weather data updated?</h2>
+      <p>Weather data is updated every 5 minutes from multiple verified sources. Water quality data is updated hourly, and wave data is refreshed every 3 hours.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>Can I use BeachScan without creating an account?</h2>
+      <p>Yes. All beach conditions, weather data, water quality, and the map are available without signing in. You only need an account (via Google or Apple Sign-In) to save beaches, rate them, and access premium features.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>How do I find the best beach near me?</h2>
+      <p>Open BeachScan and allow location access. The app automatically shows nearby beaches sorted by distance. Use the Browse feature to filter by surface type (sand, pebble, rock), amenities (showers, parking, restaurants), and water quality. Each beach shows a real-time conditions score so you can pick the best one.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>What does the beach forecast show?</h2>
+      <p>The 5-day beach forecast shows predicted conditions for each day including temperature, wind speed, UV index, and precipitation. Each day gets a beach conditions score so you can plan your visit for the best day.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>How do I delete my account?</h2>
+      <p>Visit <a href="/delete-account">beachscanapp.com/delete-account</a>, enter your account email, confirm the deletion, and all your data (profile, saved beaches, ratings) will be permanently deleted within 48 hours.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-left">&copy; 2026 BeachScan. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="mailto:contact@beachscanapp.com">Contact</a>
+    </div>
+  </footer>
+</body>
+</html>
