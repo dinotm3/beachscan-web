@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1B2838"/>
+
+  <!-- Subtle gradient -->
+  <rect width="1200" height="630" fill="url(#og-grad)"/>
+  <defs>
+    <linearGradient id="og-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0077B6" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#D4A03C" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Waves at bottom -->
+  <path d="M0 480 Q150 440, 300 480 Q450 520, 600 480 Q750 440, 900 480 Q1050 520, 1200 480 L1200 630 L0 630Z" fill="#0077B6" opacity="0.1"/>
+  <path d="M0 510 Q150 480, 300 510 Q450 540, 600 510 Q750 480, 900 510 Q1050 540, 1200 510 L1200 630 L0 630Z" fill="#0096C7" opacity="0.08"/>
+  <path d="M0 550 Q150 530, 300 550 Q450 570, 600 550 Q750 530, 900 550 Q1050 570, 1200 550 L1200 630 L0 630Z" fill="#5ABED6" opacity="0.06"/>
+
+  <!-- App icon -->
+  <rect x="100" y="160" width="140" height="140" rx="32" fill="#1B2838" stroke="#2A3E52" stroke-width="2.5"/>
+  <path d="M120 225 Q145 207, 170 225 Q195 243, 220 225" stroke="#5ABED6" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M120 245 Q145 227, 170 245 Q195 263, 220 245" stroke="#0096C7" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M124 265 Q149 247, 174 265 Q199 283, 216 268" stroke="#0077B6" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <circle cx="210" cy="190" r="13" fill="#D4A03C"/>
+
+  <!-- App name -->
+  <text x="280" y="230" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="64" font-weight="800" fill="#E8ECF1" letter-spacing="-1.5">BeachScan</text>
+
+  <!-- Tagline -->
+  <text x="282" y="278" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#8A9BB0">Real-time beach conditions at your fingertips</text>
+
+  <!-- Stats -->
+  <text x="282" y="350" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#D4A03C" font-weight="700">20,500+ beaches</text>
+  <text x="490" y="350" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#5A6A7A">·</text>
+  <text x="515" y="350" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#D4A03C" font-weight="700">5 regions</text>
+  <text x="640" y="350" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#5A6A7A">·</text>
+  <text x="665" y="350" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#D4A03C" font-weight="700">Real-time data</text>
+
+  <!-- Feature pills -->
+  <rect x="282" y="390" width="100" height="34" rx="17" fill="#0077B6" opacity="0.2"/>
+  <text x="305" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#5ABED6" font-weight="600">Weather</text>
+
+  <rect x="396" y="390" width="130" height="34" rx="17" fill="#0077B6" opacity="0.2"/>
+  <text x="416" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#5ABED6" font-weight="600">Water Quality</text>
+
+  <rect x="540" y="390" width="115" height="34" rx="17" fill="#0077B6" opacity="0.2"/>
+  <text x="558" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#5ABED6" font-weight="600">Wind Shelter</text>
+
+  <rect x="669" y="390" width="55" height="34" rx="17" fill="#0077B6" opacity="0.2"/>
+  <text x="682" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#5ABED6" font-weight="600">UV</text>
+
+  <rect x="738" y="390" width="95" height="34" rx="17" fill="#0077B6" opacity="0.2"/>
+  <text x="756" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#5ABED6" font-weight="600">Forecast</text>
+
+  <!-- URL -->
+  <text x="282" y="460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#5A6A7A">beachscanapp.com</text>
+</svg>
