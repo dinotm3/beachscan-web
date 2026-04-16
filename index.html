@@ -500,7 +500,8 @@
       font-size: 0.95rem;
       font-weight: 500;
       color: var(--text);
-      transition: border-color 0.2s;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
     }
 
     .region-tag:hover {
@@ -764,11 +765,11 @@
     <h2>Beaches across 5 regions</h2>
     <p>From the Adriatic to the Atlantic, with more regions coming soon. Built on official open data from EU environmental agencies and public meteorological services.</p>
     <div class="region-list">
-      <div class="region-tag">Croatia <span class="count">2,959</span></div>
-      <div class="region-tag">Spain <span class="count">4,363</span></div>
-      <div class="region-tag">Italy <span class="count">5,482</span></div>
-      <div class="region-tag">Greece <span class="count">5,827</span></div>
-      <div class="region-tag">Florida <span class="count">1,928</span></div>
+      <a href="/beaches/croatia" class="region-tag">Croatia <span class="count">2,959</span></a>
+      <a href="/beaches/spain" class="region-tag">Spain <span class="count">4,363</span></a>
+      <a href="/beaches/italy" class="region-tag">Italy <span class="count">5,482</span></a>
+      <a href="/beaches/greece" class="region-tag">Greece <span class="count">5,827</span></a>
+      <a href="/beaches/florida" class="region-tag">Florida <span class="count">1,928</span></a>
     </div>
   </section>
 

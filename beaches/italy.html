@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beach Conditions in Italy — 5,482 Beaches | BeachScan</title>
+  <meta name="description" content="Real-time beach conditions for 5,482 beaches in Italy. Live weather, water quality, wind shelter, and forecasts for Amalfi Coast, Sardinia, Sicily, Cinque Terre, Puglia, and Rimini.">
+  <meta name="keywords" content="Italy beaches, beach conditions Italy, Amalfi Coast beaches, Sardinia beaches, Sicily beaches, Cinque Terre beaches, Puglia beaches, migliori spiagge Italia, beste Strände Italien, plages Italie, plaże Włochy, water quality Italy beaches, beach weather Italy">
+  <meta name="theme-color" content="#1B2838">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="canonical" href="https://beachscanapp.com/beaches/italy">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Beach Conditions in Italy — 5,482 Beaches | BeachScan">
+  <meta property="og:description" content="Real-time beach conditions for 5,482 Italian beaches. Weather, water quality, wind shelter for Amalfi Coast, Sardinia, Sicily, and more.">
+  <meta property="og:image" content="https://beachscanapp.com/assets/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://beachscanapp.com/beaches/italy">
+  <meta property="og:site_name" content="BeachScan">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristDestination",
+    "name": "Italy Beaches",
+    "description": "Real-time beach conditions for 5,482 beaches across Italy, including the Amalfi Coast, Sardinia, Sicily, Cinque Terre, Puglia, and Rimini.",
+    "url": "https://beachscanapp.com/beaches/italy",
+    "touristType": ["Beach Tourist", "Swimmer", "Family Traveler"],
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.9,
+      "longitude": 12.5
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "BeachScan",
+      "url": "https://beachscanapp.com"
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #1B2838;
+      --navy-light: #243447;
+      --gold: #D4A03C;
+      --gold-light: #E8C068;
+      --blue-1: #0077B6;
+      --blue-2: #0096C7;
+      --blue-3: #5ABED6;
+      --blue-pale: #B3E0F2;
+      --sand: #FDF0D5;
+      --text: #E8ECF1;
+      --text-muted: #8A9BB0;
+      --max-w: 1080px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(27, 40, 56, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-brand img { width: 36px; height: 36px; border-radius: 8px; }
+    .nav-brand span { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; }
+
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.45rem 1.1rem;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,0.08);
+    }
+
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 7rem 2rem 4rem;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .page-header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .page-header h1 .accent { color: var(--gold); }
+
+    .page-header .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .stat-bar {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin: 2.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .stat-bar .stat { text-align: center; }
+
+    .stat-bar .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: -0.02em;
+    }
+
+    .stat-bar .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .content-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .content-section h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .content-section p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .region-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .region-tag {
+      padding: 0.6rem 1.4rem;
+      background: var(--navy-light);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 100px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: border-color 0.2s;
+    }
+
+    .region-tag:hover { border-color: var(--blue-3); }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .feature-card {
+      padding: 1.75rem;
+      background: var(--navy-light);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .feature-card:hover {
+      border-color: rgba(212, 160, 60, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .feature-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .multilingual {
+      background: var(--navy-light);
+      border-radius: 16px;
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.05);
+      margin-top: 1.5rem;
+    }
+
+    .multilingual p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .multilingual p:last-child { margin-bottom: 0; }
+
+    .keyword-phrase {
+      color: var(--text);
+      font-style: italic;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 3rem 0;
+      margin-top: 2rem;
+    }
+
+    .cta-section h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 1rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-left {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      nav { padding: 0.75rem 1rem; }
+      .nav-links { display: none; }
+      main { padding: 5rem 1.5rem 3rem; }
+      .stat-bar { gap: 1.5rem; }
+      .stat-bar .stat-number { font-size: 1.5rem; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .cta-row { flex-direction: column; align-items: center; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-brand">
+      <img src="/assets/icon.png" alt="BeachScan beach conditions app">
+      <span>BeachScan</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#regions">Regions</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/privacy-policy">Privacy</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <div class="section-label">Italy</div>
+      <h1>Beach Conditions in <span class="accent">Italy</span></h1>
+      <p class="subtitle">Real-time weather, water quality, wind shelter, and smart recommendations for 5,482 beaches along Italy's coastline, from the Amalfi Coast to Sardinia and Sicily.</p>
+      <div class="stat-bar">
+        <div class="stat">
+          <div class="stat-number">5,482</div>
+          <div class="stat-label">Beaches</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">7,600 km</div>
+          <div class="stat-label">Coastline</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Major Islands</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>Regions Covered</h2>
+      <p>BeachScan covers beaches across the entire Italian peninsula and its islands. From the dramatic cliffs of the Amalfi Coast and the turquoise waters of Sardinia to the sandy shores of Rimini and the pristine bays of Puglia, every coastal region is covered with live data.</p>
+      <div class="region-list">
+        <div class="region-tag">Amalfi Coast</div>
+        <div class="region-tag">Sardinia</div>
+        <div class="region-tag">Sicily</div>
+        <div class="region-tag">Cinque Terre</div>
+        <div class="region-tag">Puglia</div>
+        <div class="region-tag">Rimini</div>
+        <div class="region-tag">Calabria</div>
+        <div class="region-tag">Liguria</div>
+        <div class="region-tag">Tuscany</div>
+        <div class="region-tag">Campania</div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>What Data Is Available</h2>
+      <p>Every Italian beach in BeachScan comes with live conditions from official meteorological services and EU environmental monitoring agencies. The data is updated throughout the day so you always have the latest picture before heading to the beach.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#127774;</div>
+          <h3>Live Weather</h3>
+          <p>Air temperature, wind speed and direction, cloud cover, humidity, and precipitation for every beach along Italy's coast.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128167;</div>
+          <h3>Water Quality</h3>
+          <p>Official EU bathing water quality classifications. Italy has some of the most monitored bathing waters in Europe.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#127788;&#65039;</div>
+          <h3>Wind Shelter</h3>
+          <p>Wind shelter scoring helps you find calm beaches, especially useful along Sardinia's exposed coasts and the Amalfi cliffs.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128203;</div>
+          <h3>5-Day Forecast</h3>
+          <p>Plan your Italian beach holiday with daily forecasts. Know which days will have the best conditions for swimming and sunbathing.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#127754;</div>
+          <h3>Smart Recommendations</h3>
+          <p>Our algorithm weighs all conditions together to recommend the best beach for you today, whether you are in Naples or Palermo.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128506;</div>
+          <h3>Interactive Map</h3>
+          <p>Explore all 5,482 Italian beaches on a satellite map with condition overlays. Tap any beach for the full details.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>Popular Searches for Italian Beaches</h2>
+      <div class="multilingual">
+        <p>Italy's coastline attracts visitors from across Europe and around the world. Whether you are searching for <span class="keyword-phrase">"migliori spiagge Italia"</span> or <span class="keyword-phrase">"best beaches Italy"</span>, BeachScan provides real-time conditions for every beach.</p>
+        <p>German-speaking tourists frequently search for <span class="keyword-phrase">"beste Strande Italien"</span>, <span class="keyword-phrase">"Strandwetter Sardinien"</span>, and <span class="keyword-phrase">"Wasserqualitat Strande Italien"</span>. French visitors look for <span class="keyword-phrase">"plages Italie"</span>, <span class="keyword-phrase">"meilleures plages Sardaigne"</span>, and <span class="keyword-phrase">"qualite de l'eau plages Italie"</span>.</p>
+        <p>Polish tourists search for <span class="keyword-phrase">"najlepsze plaze Wlochy"</span> and <span class="keyword-phrase">"pogoda na plazy Wlochy"</span>. Croatian visitors heading across the Adriatic look for <span class="keyword-phrase">"plaze Italija"</span> and <span class="keyword-phrase">"najljepse plaze Italija"</span>. Italian speakers themselves search for <span class="keyword-phrase">"condizioni spiagge oggi"</span>, <span class="keyword-phrase">"qualita acqua balneazione"</span>, and <span class="keyword-phrase">"meteo spiaggia"</span>.</p>
+        <p>Common questions include: <span class="keyword-phrase">"Is it safe to swim in Italy today?"</span>, <span class="keyword-phrase">"best beaches near Amalfi"</span>, <span class="keyword-phrase">"beach weather Sardinia"</span>, and <span class="keyword-phrase">"water quality Sicily beaches"</span>. BeachScan answers all of these with live data.</p>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>Available in Multiple Languages</h2>
+      <p>Italy's beaches welcome millions of international tourists each year from Germany, France, Austria, Switzerland, Poland, the UK, and many other countries. BeachScan provides beach data that travelers can rely on, with beach names in their official Italian form so you can find them easily on local maps and road signs.</p>
+    </div>
+
+    <div class="cta-section">
+      <h2>Find your perfect beach in Italy</h2>
+      <p>Download BeachScan and explore real-time conditions for 5,482 Italian beaches, from iconic coastlines to hidden gems.</p>
+      <div class="cta-row">
+        <a href="#" class="btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+          Coming to Google Play
+        </a>
+        <a href="#" class="btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/></svg>
+          Coming to App Store
+        </a>
+      </div>
+      <br>
+      <a href="/" class="btn-secondary">Back to BeachScan Home</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-left">&copy; 2026 BeachScan. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="mailto:contact@beachscanapp.com">Contact</a>
+    </div>
+  </footer>
+</body>
+</html>
