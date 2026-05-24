@@ -98,7 +98,7 @@
       width: 100%;
       z-index: 100;
       padding: 1.4rem 2rem;
-      height: 92px;
+      height: 130px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -136,11 +136,11 @@
       top: 50%;
       transform: translateY(-50%);
       right: 2rem;
-      width: 28px;
-      height: 28px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: #D4A03C;
-      box-shadow: 0 0 22px rgba(212, 160, 60, 0.45);
+      box-shadow: 0 0 28px rgba(212, 160, 60, 0.5);
       transition: opacity 0.3s ease;
       z-index: 2;
     }
@@ -224,7 +224,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 7.5rem 2rem 4rem;
+      padding: 9.5rem 2rem 4rem;
       position: relative;
       background: url('/assets/hero-bg.png') center center / cover no-repeat;
     }
@@ -637,12 +637,12 @@
 
     /* ── MOBILE ── */
     @media (max-width: 640px) {
-      nav { padding: 0.9rem 1rem; height: 70px; }
+      nav { padding: 0.9rem 1rem; height: 90px; }
       nav.compact { padding: 0.5rem 1rem; height: 50px; }
-      .nav-sun { width: 22px; height: 22px; right: 1rem; }
+      .nav-sun { width: 28px; height: 28px; right: 1rem; }
       .nav-brand { left: 1rem; }
       .nav-links { display: none; }
-      .hero { padding: 6rem 1.5rem 3rem; }
+      .hero { padding: 7rem 1.5rem 3rem; }
       .hero-stats { gap: 1.5rem; }
       .hero-stats .stat-number { font-size: 1.5rem; }
       .cta-row { flex-direction: column; width: 100%; }
@@ -656,20 +656,24 @@
 <body>
   <nav id="mainNav">
     <!-- Diagonal wave banner — sits behind the nav as a background
-         layer. Each line is a strong S-curve sweeping from the top-
-         left to the bottom-right of the nav, deep control points
-         giving the waves real curvature. 3 parallel lines stagger
-         the y-offset so they read as a layered horizon. -->
+         layer. Each line is a single smooth cubic Bezier from the
+         top-left to the bottom-right of the banner. Control points
+         are placed at (800, top) and (400, bottom) so the start and
+         end tangents are horizontal — the curve enters and exits
+         flat, then sweeps cleanly through the center without the
+         sharp mid-dip the earlier two-segment paths had. The 3
+         lines are parallel translations (offset 12 units each) so
+         they read as a layered horizon spanning top-to-bottom. -->
     <div class="nav-banner">
-      <svg class="nav-waves" viewBox="0 0 1200 100" preserveAspectRatio="none"
+      <svg class="nav-waves" viewBox="0 0 1200 120" preserveAspectRatio="none"
            xmlns="http://www.w3.org/2000/svg" aria-label="BeachScan waves">
-        <path d="M0 12 C 250 -8, 450 50, 600 40 C 750 30, 950 92, 1200 76"
+        <path d="M0 6 C 800 6, 400 90, 1200 90"
               stroke="#5ABED6" stroke-width="8" stroke-linecap="round"
               fill="none" vector-effect="non-scaling-stroke"/>
-        <path d="M0 28 C 250 8, 450 66, 600 56 C 750 46, 950 108, 1200 92"
+        <path d="M0 18 C 800 18, 400 102, 1200 102"
               stroke="#0096C7" stroke-width="8" stroke-linecap="round"
               fill="none" vector-effect="non-scaling-stroke"/>
-        <path d="M0 44 C 250 24, 450 82, 600 72 C 750 62, 950 124, 1200 108"
+        <path d="M0 30 C 800 30, 400 114, 1200 114"
               stroke="#0077B6" stroke-width="8" stroke-linecap="round"
               fill="none" vector-effect="non-scaling-stroke"/>
       </svg>
