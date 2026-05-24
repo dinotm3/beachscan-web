@@ -98,7 +98,7 @@
       width: 100%;
       z-index: 100;
       padding: 1.4rem 2rem;
-      height: 130px;
+      height: 160px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -133,14 +133,13 @@
 
     .nav-sun {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 2rem;
-      width: 40px;
-      height: 40px;
+      top: 1rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: #D4A03C;
-      box-shadow: 0 0 28px rgba(212, 160, 60, 0.5);
+      box-shadow: 0 0 30px rgba(212, 160, 60, 0.55);
       transition: opacity 0.3s ease;
       z-index: 2;
     }
@@ -224,7 +223,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 9.5rem 2rem 4rem;
+      padding: 11rem 2rem 4rem;
       position: relative;
       background: url('/assets/hero-bg.png') center center / cover no-repeat;
     }
@@ -637,12 +636,12 @@
 
     /* ── MOBILE ── */
     @media (max-width: 640px) {
-      nav { padding: 0.9rem 1rem; height: 90px; }
+      nav { padding: 0.9rem 1rem; height: 110px; }
       nav.compact { padding: 0.5rem 1rem; height: 50px; }
-      .nav-sun { width: 28px; height: 28px; right: 1rem; }
+      .nav-sun { width: 30px; height: 30px; top: 0.6rem; right: 0.8rem; }
       .nav-brand { left: 1rem; }
       .nav-links { display: none; }
-      .hero { padding: 7rem 1.5rem 3rem; }
+      .hero { padding: 8rem 1.5rem 3rem; }
       .hero-stats { gap: 1.5rem; }
       .hero-stats .stat-number { font-size: 1.5rem; }
       .cta-row { flex-direction: column; width: 100%; }
@@ -656,25 +655,29 @@
 <body>
   <nav id="mainNav">
     <!-- Diagonal wave banner — sits behind the nav as a background
-         layer. Each line is a single smooth cubic Bezier from the
-         top-left to the bottom-right of the banner. Control points
-         are placed at (800, top) and (400, bottom) so the start and
-         end tangents are horizontal — the curve enters and exits
-         flat, then sweeps cleanly through the center without the
-         sharp mid-dip the earlier two-segment paths had. The 3
-         lines are parallel translations (offset 12 units each) so
-         they read as a layered horizon spanning top-to-bottom. -->
+         layer. Each line is a single cubic Bezier from top-left to
+         bottom-right with control points placed at the golden-ratio
+         section of the viewBox width:
+            ctrl1.x = 1200 × (1/φ)   ≈ 742
+            ctrl2.x = 1200 × (1/φ²)  ≈ 458
+         φ = 1.618… (golden ratio). That asymmetric placement gives
+         the curve a more pleasing visual cadence than splitting at
+         50/50 — the gentle entry on the left, faster sweep through
+         the lower-right, mirrors how the eye naturally scans LTR
+         content. Three lines spaced 24 units apart for breathing
+         room; stroke width 13 reads thick enough at desktop widths
+         without overpowering the nav links. -->
     <div class="nav-banner">
-      <svg class="nav-waves" viewBox="0 0 1200 120" preserveAspectRatio="none"
+      <svg class="nav-waves" viewBox="0 0 1200 160" preserveAspectRatio="none"
            xmlns="http://www.w3.org/2000/svg" aria-label="BeachScan waves">
-        <path d="M0 6 C 800 6, 400 90, 1200 90"
-              stroke="#5ABED6" stroke-width="8" stroke-linecap="round"
+        <path d="M0 12 C 742 12, 458 108, 1200 108"
+              stroke="#5ABED6" stroke-width="13" stroke-linecap="round"
               fill="none" vector-effect="non-scaling-stroke"/>
-        <path d="M0 18 C 800 18, 400 102, 1200 102"
-              stroke="#0096C7" stroke-width="8" stroke-linecap="round"
+        <path d="M0 36 C 742 36, 458 132, 1200 132"
+              stroke="#0096C7" stroke-width="13" stroke-linecap="round"
               fill="none" vector-effect="non-scaling-stroke"/>
-        <path d="M0 30 C 800 30, 400 114, 1200 114"
-              stroke="#0077B6" stroke-width="8" stroke-linecap="round"
+        <path d="M0 60 C 742 60, 458 156, 1200 156"
+              stroke="#0077B6" stroke-width="13" stroke-linecap="round"
               fill="none" vector-effect="non-scaling-stroke"/>
       </svg>
       <div class="nav-sun" aria-hidden="true"></div>
