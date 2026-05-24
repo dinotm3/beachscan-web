@@ -111,15 +111,37 @@
        Three wave lines + gold sun, stretched edge-to-edge so the
        pattern reads as a horizon strip across the top of the page.
        On scroll the banner collapses and the compact nav-brand
-       (small icon + title) takes over. */
+       (small icon + title) takes over.
+
+       Sun is a separate absolutely-positioned element so it stays
+       circular — the SVG itself uses preserveAspectRatio="none" to
+       stretch the waves, which would distort a circle if it were
+       embedded in the SVG. */
     .nav-banner {
       grid-column: 1 / -1;
       grid-row: 1;
-      display: block;
+      position: relative;
       width: 100%;
-      height: 64px;
+      height: 80px;
       transition: height 0.35s ease, opacity 0.3s ease, margin 0.35s ease;
       overflow: hidden;
+    }
+
+    .nav-waves {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .nav-sun {
+      position: absolute;
+      top: 10px;
+      right: 12%;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #D4A03C;
+      box-shadow: 0 0 22px rgba(212, 160, 60, 0.45);
     }
 
     nav.compact .nav-banner {
@@ -200,7 +222,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 9.5rem 2rem 4rem;
+      padding: 10.5rem 2rem 4rem;
       position: relative;
       background: url('/assets/hero-bg.png') center center / cover no-repeat;
     }
@@ -615,7 +637,8 @@
     @media (max-width: 640px) {
       nav { padding: 0.9rem 1rem 0.6rem; row-gap: 0.5rem; }
       nav.compact { padding: 0.5rem 1rem; }
-      .nav-banner { height: 48px; }
+      .nav-banner { height: 56px; }
+      .nav-sun { width: 22px; height: 22px; top: 6px; right: 8%; }
       .nav-links { display: none; }
       .hero { padding: 7rem 1.5rem 3rem; }
       .hero-stats { gap: 1.5rem; }
@@ -630,23 +653,30 @@
 </head>
 <body>
   <nav id="mainNav">
-    <!-- Full-width wave banner: 3 wave lines + gold sun. The 3-line
-         motif is the BeachScan brand pattern, also reused in the
-         mobile app's bottom bar. preserveAspectRatio="none" lets the
-         waves stretch edge-to-edge while keeping vertical proportions. -->
-    <svg class="nav-banner" viewBox="0 0 1200 80" preserveAspectRatio="none"
-         xmlns="http://www.w3.org/2000/svg" aria-label="BeachScan waves">
-      <path d="M0 20 Q150 4, 300 20 Q450 36, 600 20 Q750 4, 900 20 Q1050 36, 1200 20"
-            stroke="#5ABED6" stroke-width="4" stroke-linecap="round"
-            fill="none" vector-effect="non-scaling-stroke"/>
-      <path d="M0 40 Q150 24, 300 40 Q450 56, 600 40 Q750 24, 900 40 Q1050 56, 1200 40"
-            stroke="#0096C7" stroke-width="4" stroke-linecap="round"
-            fill="none" vector-effect="non-scaling-stroke"/>
-      <path d="M0 60 Q150 44, 300 60 Q450 76, 600 60 Q750 44, 900 60 Q1050 76, 1200 60"
-            stroke="#0077B6" stroke-width="4" stroke-linecap="round"
-            fill="none" vector-effect="non-scaling-stroke"/>
-      <circle cx="1100" cy="18" r="11" fill="#D4A03C"/>
-    </svg>
+    <!-- Full-width wave banner. Each line is a clean S-curve (2
+         quadratic Bezier segments — one hump up, one hump down)
+         mirroring the icon's wave shape exactly, just stretched
+         across the page. preserveAspectRatio="none" stretches the
+         waves edge-to-edge; vector-effect keeps the stroke a
+         consistent thickness so the lines stay readable on wide
+         screens. The sun is a separate absolutely-positioned div so
+         it stays a circle (an SVG circle inside would get stretched
+         into an ellipse by the same none-aspect setting). -->
+    <div class="nav-banner">
+      <svg class="nav-waves" viewBox="0 0 1200 80" preserveAspectRatio="none"
+           xmlns="http://www.w3.org/2000/svg" aria-label="BeachScan waves">
+        <path d="M0 26 Q300 10, 600 26 Q900 42, 1200 26"
+              stroke="#5ABED6" stroke-width="8" stroke-linecap="round"
+              fill="none" vector-effect="non-scaling-stroke"/>
+        <path d="M0 44 Q300 28, 600 44 Q900 60, 1200 44"
+              stroke="#0096C7" stroke-width="8" stroke-linecap="round"
+              fill="none" vector-effect="non-scaling-stroke"/>
+        <path d="M0 62 Q300 46, 600 62 Q900 78, 1200 62"
+              stroke="#0077B6" stroke-width="8" stroke-linecap="round"
+              fill="none" vector-effect="non-scaling-stroke"/>
+      </svg>
+      <div class="nav-sun" aria-hidden="true"></div>
+    </div>
     <a href="/" class="nav-brand">
       <img src="/assets/icon.png" alt="BeachScan beach conditions app">
       <span>BeachScan</span>
