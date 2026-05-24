@@ -98,7 +98,7 @@
       width: 100%;
       z-index: 100;
       padding: 1.4rem 2rem;
-      height: 160px;
+      height: 180px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -223,7 +223,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 11rem 2rem 4rem;
+      padding: 12rem 2rem 4rem;
       position: relative;
       background: url('/assets/hero-bg.png') center center / cover no-repeat;
     }
@@ -655,28 +655,30 @@
 <body>
   <nav id="mainNav">
     <!-- Diagonal wave banner — sits behind the nav as a background
-         layer. Each line is a single cubic Bezier from top-left to
-         bottom-right with control points placed at the golden-ratio
-         section of the viewBox width:
-            ctrl1.x = 1200 × (1/φ)   ≈ 742
-            ctrl2.x = 1200 × (1/φ²)  ≈ 458
-         φ = 1.618… (golden ratio). That asymmetric placement gives
-         the curve a more pleasing visual cadence than splitting at
-         50/50 — the gentle entry on the left, faster sweep through
-         the lower-right, mirrors how the eye naturally scans LTR
-         content. Three lines spaced 24 units apart for breathing
-         room; stroke width 13 reads thick enough at desktop widths
-         without overpowering the nav links. -->
+         layer. Each line uses the icon's wave shape: a Q-Q quadratic
+         pair that starts going UP (control point above start), peaks,
+         crosses the baseline at midpoint, troughs in the down-hump,
+         then rises again so the end tangent points UP. Stretched
+         across width 1200 with each line diagonally offset by ~25
+         units to create a layered horizon.
+
+         Proportions follow the golden ratio (φ ≈ 1.618):
+            amplitude (peak-to-trough)  ≈ 110
+            diagonal slope (start-to-end y delta)  ≈ 50
+            ratio 110 / 50  ≈ 2.2  ≈ φ + 0.6
+         Line spacing of 30 units matches φ × stroke-width (13 × 1.6 ≈ 21,
+         rounded up for visual breathing room since strokes have
+         linecap="round" extending past the path proper). -->
     <div class="nav-banner">
-      <svg class="nav-waves" viewBox="0 0 1200 160" preserveAspectRatio="none"
+      <svg class="nav-waves" viewBox="0 0 1200 200" preserveAspectRatio="none"
            xmlns="http://www.w3.org/2000/svg" aria-label="BeachScan waves">
-        <path d="M0 12 C 742 12, 458 108, 1200 108"
+        <path d="M0 35 Q 300 -5, 600 60 Q 900 125, 1200 85"
               stroke="#5ABED6" stroke-width="13" stroke-linecap="round"
               fill="none" vector-effect="non-scaling-stroke"/>
-        <path d="M0 36 C 742 36, 458 132, 1200 132"
+        <path d="M0 65 Q 300 25, 600 90 Q 900 155, 1200 115"
               stroke="#0096C7" stroke-width="13" stroke-linecap="round"
               fill="none" vector-effect="non-scaling-stroke"/>
-        <path d="M0 60 C 742 60, 458 156, 1200 156"
+        <path d="M0 95 Q 300 55, 600 120 Q 900 185, 1200 145"
               stroke="#0077B6" stroke-width="13" stroke-linecap="round"
               fill="none" vector-effect="non-scaling-stroke"/>
       </svg>
