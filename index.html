@@ -97,10 +97,10 @@
       top: 0;
       width: 100%;
       z-index: 100;
-      padding: 1.4rem 2rem;
+      padding: 1.4rem 2rem 0;
       height: 180px;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       background: rgba(27, 40, 56, 0.9);
       backdrop-filter: blur(14px);
@@ -186,18 +186,27 @@
       display: flex;
       gap: 0.25rem;
       list-style: none;
-      background: rgba(27, 40, 56, 0.55);
-      backdrop-filter: blur(6px);
-      border-radius: 10px;
-      padding: 0.25rem;
+      background: rgba(27, 40, 56, 0.92);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-bottom: none;
+      border-radius: 12px 12px 0 0;
+      padding: 0.4rem 0.5rem;
+      transform: translateY(1px);
+      box-shadow: 0 -6px 16px rgba(0,0,0,0.18);
       transition: all 0.35s ease;
       z-index: 2;
     }
 
     nav.compact .nav-links {
       background: transparent;
-      padding: 0.15rem;
       backdrop-filter: none;
+      border: none;
+      border-radius: 10px;
+      padding: 0.15rem;
+      transform: none;
+      box-shadow: none;
+      align-self: center;
     }
 
     .nav-links a {
